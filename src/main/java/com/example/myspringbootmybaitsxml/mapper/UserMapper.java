@@ -58,4 +58,6 @@ public interface UserMapper {
      * @return
      */
     User getUserAndDepByStep(int id);
+
+    List<User> getUserByCondition(User user);
 }
