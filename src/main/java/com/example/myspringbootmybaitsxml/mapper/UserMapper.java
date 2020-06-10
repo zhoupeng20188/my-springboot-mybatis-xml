@@ -1,6 +1,7 @@
 package com.example.myspringbootmybaitsxml.mapper;
 
 import com.example.myspringbootmybaitsxml.entity.User;
+import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
 
