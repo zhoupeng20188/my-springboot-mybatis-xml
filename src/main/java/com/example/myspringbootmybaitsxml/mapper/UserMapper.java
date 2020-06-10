@@ -19,21 +19,21 @@ public interface UserMapper {
      * @param nickName
      * @return
      */
-    public List<User> getUserByUserNameAndNickName(String userName, String nickName);
+    List<User> getUserByUserNameAndNickName(String userName, String nickName);
 
     /**
      * 普通单条
      * @param id
      * @return
      */
-    public User getUserById(int id);
+    User getUserById(int id);
 
     /**
      * 不定义对象接收时的写法（单条）
      * @param id
      * @return
      */
-    public Map<String,Object> getUserMapById(int id);
+    Map<String,Object> getUserMapById(int id);
 
     /**
      * 不定义对象接收时的写法（多条）
@@ -43,17 +43,17 @@ public interface UserMapper {
      * @return
      */
     @MapKey("user_id")
-    public Map<Integer,Object> getUserMapByUserNameAndNickName(String userName, String nickName);
+    Map<Integer,Object> getUserMapByUserNameAndNickName(String userName, String nickName);
 
     /**
      * 关联查询 级联属性
      * @param id
      * @return
      */
-    public User getUserAndDepById(int id);
+    User getUserAndDepById(int id);
 
     /**
-     * 分步查询
+     * 分步查询(association)
      * @param id
      * @return
      */

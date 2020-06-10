@@ -5,4 +5,12 @@
   <select id="getDepartmentById" resultType="com.example.myspringbootmybaitsxml.entity.Department">
     select * from  department where dep_id = #{id}
   </select>
+  <resultMap id="getDepsUserMap" type="com.example.myspringbootmybaitsxml.entity.Department">
+    <result column="dep_id" property="depId"></result>
+    <result column="dep_name" property="depName"></result>
+    <collection property="user" select="com.example.myspringbootmybaitsxml.mapper.UserMapper.getDepsUserByStep" column="dep_id"></collection>
+  </resultMap>
+  <select id="getDepsUser" resultMap="getDepsUserMap">
+    select * from  department where dep_id = #{id}
+  </select>
 </mapper>

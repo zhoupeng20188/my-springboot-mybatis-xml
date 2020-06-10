@@ -53,4 +53,8 @@
   <select id="getUserAndDepByStep" resultMap="userDepStepMap">
     select * from user where user_id = #{id}
   </select>
+
+  <select id="getDepsUserByStep" resultType="com.example.myspringbootmybaitsxml.entity.User">
+    select * from user where dep_id = #{id}
+  </select>
 </mapper>

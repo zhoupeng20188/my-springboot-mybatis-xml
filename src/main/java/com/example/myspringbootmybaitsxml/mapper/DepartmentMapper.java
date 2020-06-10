@@ -20,5 +20,12 @@ public interface DepartmentMapper {
      * @param id
      * @return
      */
-    public Department getDepartmentById(int id);
+    Department getDepartmentById(int id);
+
+    /**
+     * 分步查询（collection）
+     * @param id
+     * @return
+     */
+    Department getDepsUser(int id);
 }
