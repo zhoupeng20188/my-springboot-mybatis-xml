@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.myspringbootmybaitsxml.mapper.UserMapper">
+  <insert id="multiInsert">
+    insert into user(user_id, user_name, nick_name, sex, address)
+    values
+    <foreach collection="users" item="user" separator=",">
+      (#{user.userId}, #{user.userName}, #{user.nickName},#{user.sex},#{user.address})
+    </foreach>
+  </insert>
   <select id="getUserByUserNameAndNickName" resultType="com.example.myspringbootmybaitsxml.entity.User">
     select * from  user where user_name = #{param1} and nick_name=#{param2}
   </select>

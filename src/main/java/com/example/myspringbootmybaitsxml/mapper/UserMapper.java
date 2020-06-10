@@ -59,5 +59,16 @@ public interface UserMapper {
      */
     User getUserAndDepByStep(int id);
 
+    /**
+     * 动态sql
+     * @param user
+     * @return
+     */
     List<User> getUserByCondition(User user);
+
+    /**
+     * 批量insert
+     * @param users
+     */
+    void multiInsert(List<User> users);
 }

@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,6 +38,22 @@ class MySpringbootMybaitsXmlApplicationTests {
 //        userCondition.setNickName("22");
         List<User> list = userMapper.getUserByCondition(userCondition);
         System.out.println(list);
+    }
+
+    @Test
+    void test03(){
+        List<User> users = new ArrayList<>();
+        for (int i = 10; i < 20; i++) {
+            User user = new User();
+            user.setUserId(i);
+            user.setUserName("userName"+i);
+            user.setNickName("nickName"+i);
+            user.setAddress("address"+i);
+            user.setSex(0);
+            users.add(user);
+        }
+        userMapper.multiInsert(users);
+
     }
 
 }
