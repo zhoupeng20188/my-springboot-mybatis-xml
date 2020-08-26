@@ -1,6 +1,7 @@
 package com.example.myspringbootmybaitsxml.controller;
 
 import com.example.myspringbootmybaitsxml.entity.User;
+import com.example.myspringbootmybaitsxml.mapper.DepartmentMapper;
 import com.example.myspringbootmybaitsxml.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,8 @@ import java.util.Map;
 public class IndexController {
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private DepartmentMapper departmentMapper;
 
     @RequestMapping("/index")
     public List<User> getUserList(String userName, String nickName){
@@ -44,4 +47,10 @@ public class IndexController {
     public User userDepByStep(int id){
         return  userMapper.getUserAndDepByStep(id);
     }
+
+    @RequestMapping("/update")
+    public void update(int id){
+        userMapper.update(id);
+    }
+
 }

@@ -28,4 +28,6 @@ public interface DepartmentMapper {
      * @return
      */
     Department getDepsUser(int id);
+
+
 }

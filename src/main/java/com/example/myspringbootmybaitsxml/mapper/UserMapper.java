@@ -4,6 +4,7 @@ import com.example.myspringbootmybaitsxml.entity.User;
 import org.apache.ibatis.annotations.CacheNamespace;
 import org.apache.ibatis.annotations.MapKey;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 import java.util.Map;
@@ -72,4 +73,6 @@ public interface UserMapper {
      * @param users
      */
     void multiInsert(List<User> users);
+
+    void update(int id);
 }

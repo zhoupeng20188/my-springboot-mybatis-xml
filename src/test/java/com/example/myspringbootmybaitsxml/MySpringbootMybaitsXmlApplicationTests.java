@@ -56,4 +56,22 @@ class MySpringbootMybaitsXmlApplicationTests {
 
     }
 
+    @Test
+    void test04(){
+        long start = System.currentTimeMillis();
+        User user = userMapper.getUserAndDepById(1);
+        System.out.println(user);
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
+    }
+
+    @Test
+    void test05(){
+        long start = System.currentTimeMillis();
+        User user = userMapper.getUserAndDepByStep(1);
+        System.out.println(user);
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
+    }
+
 }
