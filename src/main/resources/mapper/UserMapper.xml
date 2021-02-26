@@ -100,4 +100,8 @@
   <update id="update">
     update user set nick_name = 'ttt11' where user_id = #{id}
   </update>
+
+  <select id="selectTest" resultType="com.example.myspringbootmybaitsxml.entity.User">
+    select * from user where user_name like "%${userName}%"
+  </select>
 </mapper>

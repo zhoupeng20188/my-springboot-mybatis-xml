@@ -75,4 +75,11 @@ public interface UserMapper {
     void multiInsert(List<User> users);
 
     void update(int id);
+
+    /**
+     * ${}注入测试
+     * @param user
+     * @return
+     */
+    List<User> selectTest(String userName);
 }

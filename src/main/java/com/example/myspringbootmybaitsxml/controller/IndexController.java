@@ -53,4 +53,9 @@ public class IndexController {
         userMapper.update(id);
     }
 
+    @RequestMapping("/like")
+    public List<User> like(String userName){
+        return userMapper.selectTest(userName);
+    }
+
 }
